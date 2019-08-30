@@ -1,0 +1,34 @@
+{
+  "author": "Yoav Sternberg",
+  "icons": {
+    "16": "src/images/icon16.png",
+    "48": "src/images/icon48.png",
+    "128": "src/images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://iims.tau.ac.il/*",
+        "https://iims.tau.ac.il/*",
+        "http://www.ims.tau.ac.il/*",
+        "https://www.ims.tau.ac.il/*"
+      ],
+      "js": [
+        "src/js/content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": ["src/js/plotly-latest.min.js"],
+
+  "description": "Get full distribution for a course",
+  "manifest_version": 2,
+  "minimum_chrome_version": "26",
+  "name": "Tau grades distribution",
+  "permissions": [
+    "http://*.tau.ac.il/",
+    "https://*.tau.ac.il/"
+  ],
+  "version": "1.0.0"
+}
