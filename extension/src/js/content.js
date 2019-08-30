@@ -101,7 +101,7 @@ async function getGrades({ semester, courseId, userId }, updateListener) {
         const doc = new DOMParser().parseFromString(body, "text/html")
         const cell = [...doc.querySelectorAll("table.table.rounddiv tr:nth-child(2) td:nth-child(8)")]
 
-        reported[0] = parseInt(doc.querySelector("table.table.rounddiv tr:nth-child(1) td:nth-child(2)").textContent.trim())
+        reported[0] = parseInt(doc.querySelector("table.table.rounddiv tr:nth-child(1) td:nth-child(2)").textContent.trim()) + 1
 
         if (cell.length == 0) {
             reported[grade] = reported[grade - 1]
